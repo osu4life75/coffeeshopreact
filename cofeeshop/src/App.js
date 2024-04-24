@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
-// import Menu from './components/Menu'; // Import your Menu component
 import Body from './components/Body';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -8,12 +7,13 @@ import Navbar from './components/Navbar';
 
 function App() {
   const [menuItems, setMenuItems] = useState([]);
-  const [shoppingCart,setShoppingCart] = useState([]);
+  const [shoppingCart, setShoppingCart] = useState([]);
+  const [merchandiseItems, setMerchandiseItems] = useState([]);
 
   useEffect(() => {
     // Simulating fetching data from an API
     let mockMenuItems = [
-      { id: 1, item: "Black Coffee", price: 1, image: 'https://github.com/bryanrigsby/imagesForCoffeeShopSite/blob/main/resized_black_coffee.jpeg?raw=true' },
+      { id: 1, item: "Black Coffee", price: 1, image: 'https://github.com/osu4life75/coffeShopImages/blob/main/intro-1641943654.jpg?raw=true' },
       { id: 2, item: "Espresso", price: 2, image: 'https://github.com/bryanrigsby/imagesForCoffeeShopSite/blob/main/resized_espresso1.jpeg?raw=true' },
       { id: 3, item: "Cappuccino", price: 3, image: 'https://github.com/bryanrigsby/imagesForCoffeeShopSite/blob/main/resized_cappuccino.jpeg?raw=true' },
       { id: 4, item: "Latte", price: 2, image: 'https://github.com/bryanrigsby/imagesForCoffeeShopSite/blob/main/resized_latte.jpeg?raw=true' },
@@ -22,38 +22,30 @@ function App() {
     ];
 
     setMenuItems(mockMenuItems);
-
-    //   await fetch("/.netlify/functions/getData")
-    //     .then(function (response) {
-    //       console.log('response', response)
-    //       if (response.ok) {
-    //         return response.json();
-    //       }
-    //       throw new Error("Network response was not ok.");
-    //     })
-    //     .then(function (data) {
-    //       console.log('data', data)
-    //       setMenuItems(data)
-    //     })
-    //     .catch(function (error) {
-    //       console.log(error);
-    //       alert("Function Failed");
-    //     });
-
   }, []);
 
-  const updateShoppingCart = (shoppingCartItem) =>{
-      console.log('got shopping cart', shoppingCartItem);
-      setShoppingCart(shoppingCartItem);
+  useEffect(() => {
+    // Simulating fetching data from an API
+    let mockMerchandiseItems = [
+      { id: 1, item: "Black Coffee 160z Bag", price: 8, image: 'https://github.com/osu4life75/coffeShopImages/blob/main/bagofcoffe.jpeg?raw=true' },
+      { id: 2, item: "Stanley Cup", price: 28, image: 'https://github.com/osu4life75/coffeShopImages/blob/main/Vip-Dropping-Shipping-Stanley-Stainless-Steel-Vacuum-Insulated-Tumbler-with-Lid-and-Straw-40oz-Thermal-Travel.webp?raw=true' },
+      { id: 3, item: "Ceramic Cup", price: 6, image: 'https://github.com/osu4life75/coffeShopImages/blob/main/PavoRealPeacockMug_CR-17P_web_1_1500x.webp?raw=true' },
+      { id: 4, item: "Logo Hat", price: 12, image: 'https://github.com/osu4life75/coffeShopImages/blob/main/OCW-OAKTruckerHat-01.webp?raw=true' },
+      { id: 5, item: "Logo Tshirt", price: 19, image: 'https://github.com/osu4life75/coffeShopImages/blob/main/coffeeshirt.jpeg?raw=true' },
+      { id: 6, item: "Coffee Calendar", price: 3, image: 'https://github.com/osu4life75/coffeShopImages/blob/main/75_750x750_Front_Color-NA.jpg?raw=true' }
+    ];
 
-  }
+    setMerchandiseItems(mockMerchandiseItems);
+  }, []);
+
+  const updateShoppingCart = (shoppingCartItem) => {
+    setShoppingCart([...shoppingCart, shoppingCartItem]);
+  };
 
   return (
-    
     <div className="App">
-      <Navbar shoppingCart={shoppingCart}/>
-      {/* <Menu menuItems={menuItems} /> Pass menuItems as props to Menu component */}
-      <Body updateShoppingCart={(e) => updateShoppingCart(e) } menuItems={menuItems} /> {/* Pass menuItems as props to Body component */}
+      <Navbar shoppingCart={shoppingCart} />
+      <Body updateShoppingCart={updateShoppingCart} menuItems={menuItems} merchandiseItems={merchandiseItems}/>
       <Contact />
       <Footer />
     </div>

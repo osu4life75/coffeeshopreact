@@ -1,13 +1,18 @@
 import React from 'react'
+import { FaFacebook } from "react-icons/fa";
+import { RiTwitterXFill } from "react-icons/ri";
+import { FaInstagramSquare } from "react-icons/fa";
+
 
 export default function Footer() {
   return (
     <>
     {/* Social Media Links */}
     <div className="social-media">
-      <a href="https://facebook.com"><img src="/facebook-icon.png" alt="Facebook" /></a>
-      <a href="https://twitter.com"><img src="/twitter-icon.png" alt="Twitter" /></a>
-      <a href="https://instagram.com"><img src="/instagram-icon.png" alt="Instagram" /></a>
+      <FaFacebook />
+      <RiTwitterXFill />
+      <FaInstagramSquare />
+
     </div>
 
     {/* Hours of Operation */}
@@ -19,7 +24,7 @@ export default function Footer() {
     </div>
 
     {/* Logo */}
-    <img src="/logo.png" alt="Company Logo" className="logo" />
+    <img src="https://github.com/osu4life75/coffeShopImages/blob/main/coffeeshoplogo.jpeg?raw=true" alt="Company Logo" className="logo" />
 
    {/* Copyright Notice */}
     <div className="copyright">

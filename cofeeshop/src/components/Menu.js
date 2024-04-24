@@ -2,6 +2,7 @@ import React from 'react';
 import MenuItem from './MenuItem';
 
 function Menu(props) {
+  console.log("Menu", props)
   return (
     <div className="menu">
       <div className="row">
@@ -11,7 +12,7 @@ function Menu(props) {
       <div className={'row container pb-2'} style={{margin: '0 auto'}}>
         {props.menuItems.map(item => (
           <MenuItem updateShoppingCart={(e) => {
-            console.log('e',e);
+            
             props.updateShoppingCart(e)
           } } key={item.id} item={item}/>
         ))}

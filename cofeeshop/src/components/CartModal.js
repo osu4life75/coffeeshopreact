@@ -2,7 +2,7 @@ import React from 'react'
 
 
 export default function CartModal(props) {
-    console.log('cartModal', props.shoppingCart);
+    
   return (
     
     <div className="modal" tabIndex="-1" role="dialog" id='cartModal'>
@@ -15,15 +15,16 @@ export default function CartModal(props) {
         </button>
       </div>
       <div className="modal-body">
-        {props.shoppingCart && props.shoppingCart.length > 0 && props.shoppingCart.map(cartItem => (
-            
-           <p key={cartItem.id}>{`${cartItem.item}-$${cartItem.price}`}</p>
-           
-           
-        ))}
-      </div>
+            {props.shoppingCart && props.shoppingCart.length > 0 ? (
+              props.shoppingCart.map(cartItem => (
+                <p key={cartItem.id}>{`${cartItem.item}-$${cartItem.price}`}</p>
+              ))
+            ) : (
+              <p>You have no items in the cart</p>
+            )}
+          </div>
       <div className="modal-footer">
-        <button type="button" className="btn btn-primary">Save changes</button>
+        <button type="button" className="btn btn-primary">Go To Checkout</button>
         <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
