@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function MerchandiseItems(props) {
     return (
-      <div className="col-md-4 p-1">
+      <div className="col-12 col-md-6 col-lg-4">
          <div  className="card">
               <img className={"card-img-top img-fluid h-100"} src={props.item.image} style={{borderBottom: '1px solid lightgray'}}/>
               <div className="card-body">
