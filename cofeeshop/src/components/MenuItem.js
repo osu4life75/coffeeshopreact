@@ -9,9 +9,9 @@ export default function MenuItem(props) {
   };
 
   return (
-    <div className="col-12 col-md-6 col-lg-4">
+    <div className="col-12 col-md-6 col-lg-4" style={{padding: '12px'}}>
       <div className="card">
-        <img className="card-img-top img-fluid h-100" src={props.item.image} style={{ borderBottom: '1px solid lightgray' }} />
+        <img className="cardimg" src={props.item.image} style={{ borderBottom: '1px solid lightgray' }} />
         <div className="card-body">
           <h5 className="card-title">{props.item.item}</h5>
           <p className="card-text">Price: {props.item.price}</p>
