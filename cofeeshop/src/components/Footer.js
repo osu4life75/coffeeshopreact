@@ -24,7 +24,7 @@ export default function Footer() {
     </div>
 
     {/* Logo */}
-    <img src="https://github.com/osu4life75/coffeShopImages/blob/main/coffeeshoplogo.jpeg?raw=true" alt="Company Logo" className="logo" />
+    <img src="https://github.com/osu4life75/coffeShopImages/blob/main/coffeeshoplogo.jpeg?raw=true" alt="Company Logo" className="logo" style={{ width: 100 }} />
 
    {/* Copyright Notice */}
     <div className="copyright">
