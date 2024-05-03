@@ -6,7 +6,7 @@ function Menu(props) {
   return (
     <div className="menu">
       <div className="row">
-        <h3 className="col-12 p-1">Menu</h3>
+        <h3 className="col-12 col-md-6 col-lg-4">Menu</h3>
       </div>
       
       <div className={'row container pb-2'} style={{margin: '0 auto'}}>

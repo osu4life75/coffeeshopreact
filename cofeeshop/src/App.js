@@ -10,7 +10,7 @@ function App() {
   const [shoppingCart, setShoppingCart] = useState([]);
   const [merchandiseItems, setMerchandiseItems] = useState([]);
   const [likedCoffee, setLikedCoffee] = useState([]);
-  
+  const [weather, setWeather] = useState(null); // State for weather information
 
   useEffect(() => {
     // Simulating fetching data from an API
@@ -25,6 +25,9 @@ function App() {
 
     setMenuItems(mockMenuItems);
     setLikedCoffee([1,2,5,6]);
+
+    // Fetch weather data
+    fetchWeather();
   }, []);
 
   useEffect(() => {
@@ -46,19 +49,28 @@ function App() {
   };
 
   const addFavoriteHeart = (likedCoffeeID) => {
-    console.log("likedCoffeItem", likedCoffeeID)
     if (likedCoffee.includes(likedCoffeeID)) {
       let temp = [...likedCoffee];
       let index = temp.indexOf(likedCoffeeID);
-      console.log("index", index);
       temp.splice(index,1);
-      console.log("temp", temp)
       setLikedCoffee(temp);
-
-      
-    }else{
+    } else {
       setLikedCoffee([...likedCoffee, likedCoffeeID]);
+    }
+  };
 
+  // Function to fetch weather data
+  const fetchWeather = async () => {
+    try {
+      const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=Oklahoma-City&appid=0ffc358a5008bde04e2844edc7226100&units=metric`);
+      if (response.ok) {
+        const data = await response.json();
+        setWeather(data);
+      } else {
+        throw new Error('Failed to fetch weather data');
+      }
+    } catch (error) {
+      console.error('Error fetching weather data:', error);
     }
   };
 
@@ -67,7 +79,7 @@ function App() {
       <Navbar shoppingCart={shoppingCart} />
       <Body updateShoppingCart={updateShoppingCart} menuItems={menuItems} merchandiseItems={merchandiseItems} addFavoriteHeart={addFavoriteHeart} likedCoffee={likedCoffee}/>
       <Contact />
-      <Footer />
+      <Footer weather={weather} /> {/* Pass weather data to Footer component */}
     </div>
   );
 }
