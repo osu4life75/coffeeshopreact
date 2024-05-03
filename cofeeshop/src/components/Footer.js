@@ -12,18 +12,23 @@ const Footer = ({ weather }) => {
   return (
     <>
       {/* Social Media Links */}
-      <div className="social-media">
-        <FaFacebook />
-        <RiTwitterXFill />
-        <FaInstagramSquare />
+      <div className="social-media" style={{ fontSize: '60px' }}>
+        <a href="https://www.facebook.com">
+          <FaFacebook style={{ marginRight: '10px' }} />
+        </a>
+        <a href="https://twitter.com">
+          <RiTwitterXFill style={{ marginRight: '10px' }} />
+        </a>
+        <a href="https://www.instagram.com">
+          <FaInstagramSquare />
+        </a>
       </div>
-
       {/* Weather Display */}
       {weather && (
         <div className="weather">
-          <h3>Weather</h3>
-          <p>{weather.weather[0].main}</p>
-          <p>Temperature: {toFahrenheit(weather.main.temp)}°F</p> {/* Convert Celsius to Fahrenheit */}
+          <h3 style={{ fontSize: '60px' }}>Weather</h3>
+          <p style={{ fontSize: '30px' }}>{weather.weather[0].main}</p>
+          <p style={{ fontSize: '30px' }}>Temperature: {toFahrenheit(weather.main.temp)}°F</p> {/* Convert Celsius to Fahrenheit */}
         </div>
       )}
 
