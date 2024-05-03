@@ -5,7 +5,7 @@ import Merchandise from './Merchandise';
 export default function Body(props) {
   return (
     <div className="container" >
-       <Menu updateShoppingCart={(e) => props.updateShoppingCart(e) } menuItems={props.menuItems}/>
+       <Menu updateShoppingCart={(e) => props.updateShoppingCart(e) } menuItems={props.menuItems} addFavoriteHeart={(e) => props.addFavoriteHeart(e)} likedCoffee={props.likedCoffee}/>
        <Merchandise updateShoppingCart={(e) => props.updateShoppingCart(e) } merchandiseItems={props.merchandiseItems}/>
      </div>
   );

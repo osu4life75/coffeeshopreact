@@ -9,6 +9,8 @@ function App() {
   const [menuItems, setMenuItems] = useState([]);
   const [shoppingCart, setShoppingCart] = useState([]);
   const [merchandiseItems, setMerchandiseItems] = useState([]);
+  const [likedCoffee, setLikedCoffee] = useState([]);
+  
 
   useEffect(() => {
     // Simulating fetching data from an API
@@ -22,6 +24,7 @@ function App() {
     ];
 
     setMenuItems(mockMenuItems);
+    setLikedCoffee([1,2,5,6]);
   }, []);
 
   useEffect(() => {
@@ -42,10 +45,27 @@ function App() {
     setShoppingCart([...shoppingCart, shoppingCartItem]);
   };
 
+  const addFavoriteHeart = (likedCoffeeID) => {
+    console.log("likedCoffeItem", likedCoffeeID)
+    if (likedCoffee.includes(likedCoffeeID)) {
+      let temp = [...likedCoffee];
+      let index = temp.indexOf(likedCoffeeID);
+      console.log("index", index);
+      temp.splice(index,1);
+      console.log("temp", temp)
+      setLikedCoffee(temp);
+
+      
+    }else{
+      setLikedCoffee([...likedCoffee, likedCoffeeID]);
+
+    }
+  };
+
   return (
     <div className="App">
       <Navbar shoppingCart={shoppingCart} />
-      <Body updateShoppingCart={updateShoppingCart} menuItems={menuItems} merchandiseItems={merchandiseItems} />
+      <Body updateShoppingCart={updateShoppingCart} menuItems={menuItems} merchandiseItems={merchandiseItems} addFavoriteHeart={addFavoriteHeart} likedCoffee={likedCoffee}/>
       <Contact />
       <Footer />
     </div>

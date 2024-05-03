@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import { FaRegHeart, FaHeart } from 'react-icons/fa';
 
 export default function MenuItem(props) {
-  const [isFavorite, setIsFavorite] = useState(false);
-
+  console.log("props", props);
+  
   const toggleFavorite = () => {
-    setIsFavorite(!isFavorite);
+  props.addFavoriteHeart(props.item.id)
   };
-
+  
   return (
     <div className="col-12 col-md-6 col-lg-4" style={{padding: '12px'}}>
       <div className="card">
@@ -16,11 +16,12 @@ export default function MenuItem(props) {
           <h5 className="card-title">{props.item.item}</h5>
           <p className="card-text">Price: {props.item.price}</p>
           <button className="btn btn-primary mr-2" onClick={() => props.updateShoppingCart(props.item)}>Add To Cart</button>
-          {isFavorite ? (
+          {props.isLiked ? (
             <FaHeart className="favorite-icon text-danger" onClick={toggleFavorite} />
           ) : (
             <FaRegHeart className="favorite-icon" onClick={toggleFavorite} />
           )}
+           
         </div>
       </div>
     </div>

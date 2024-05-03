@@ -62,3 +62,14 @@ row{
   background-color:navajowhite;
   color:saddlebrown;
 }
+
+.logo{
+  width: 375px;
+  height: 384px;
+  color: navajowhite;
+}
+
+.manager{
+  width: 375px;
+  height: 384px;
+}

@@ -14,7 +14,7 @@ function Menu(props) {
           <MenuItem updateShoppingCart={(e) => {
             
             props.updateShoppingCart(e)
-          } } key={item.id} item={item}/>
+          } } key={item.id} item={item} isLiked={props.likedCoffee.includes(item.id)} addFavoriteHeart={(e) => props.addFavoriteHeart(e)} likedCoffee={props.likedCoffee}/>
         ))}
       </div>
     </div>

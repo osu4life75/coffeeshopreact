@@ -15,16 +15,16 @@ export default function Footer() {
 
     </div>
 
-    {/* Hours of Operation */}
+    {/* Hours of Operation
     <div className="hours-of-operation">
       <h3>Hours of Operation</h3>
       <p>Monday - Friday: 9am - 6pm</p>
       <p>Saturday: 10am - 4pm</p>
       <p>Sunday: Closed</p>
-    </div>
+    </div> */}
 
-    {/* Logo */}
-    <img src="https://github.com/osu4life75/coffeShopImages/blob/main/coffeeshoplogo.jpeg?raw=true" alt="Company Logo" className="logo" style={{ width: 100 }} />
+    {/* Logo
+    <img src="https://github.com/osu4life75/coffeShopImages/blob/main/coffeeshoplogo.jpeg?raw=true" alt="Company Logo" className="logo"/> */}
 
    {/* Copyright Notice */}
     <div className="copyright">
