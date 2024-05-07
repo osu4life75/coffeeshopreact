@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  background-color:navajowhite;
+  color:saddlebrown;
+  margin: 0;
 }
 
 .App-logo {
@@ -58,10 +61,13 @@ row{
   margin: 20px;
 }
 
-.App{
-  background-color:navajowhite;
-  color:saddlebrown;
+
+
+.container {
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
 }
+
 
 .logo{
   width: 375px;

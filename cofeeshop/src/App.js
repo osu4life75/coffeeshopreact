@@ -60,9 +60,10 @@ function App() {
   };
 
   // Function to fetch weather data
+  // Function to fetch weather data
   const fetchWeather = async () => {
     try {
-      const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=Oklahoma-City&appid=0ffc358a5008bde04e2844edc7226100&units=metric`);
+      const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=Oklahoma%20City&appid=0ffc358a5008bde04e2844edc7226100&units=metric`);
       if (response.ok) {
         const data = await response.json();
         setWeather(data);
@@ -73,6 +74,8 @@ function App() {
       console.error('Error fetching weather data:', error);
     }
   };
+  
+
 
   return (
     <div className="App">

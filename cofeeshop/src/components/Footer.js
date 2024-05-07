@@ -2,6 +2,7 @@ import React from 'react';
 import { FaFacebook } from "react-icons/fa";
 import { RiTwitterXFill } from "react-icons/ri";
 import { FaInstagramSquare } from "react-icons/fa";
+import { WiCloudy } from "react-icons/wi"; // Import the cloudy icon from react-icons
 
 const Footer = ({ weather }) => {
   // Function to convert Celsius to Fahrenheit and round to nearest whole number
@@ -23,12 +24,13 @@ const Footer = ({ weather }) => {
           <FaInstagramSquare />
         </a>
       </div>
+
       {/* Weather Display */}
       {weather && (
         <div className="weather">
-          <h3 style={{ fontSize: '60px' }}>Weather</h3>
-          <p style={{ fontSize: '30px' }}>{weather.weather[0].main}</p>
-          <p style={{ fontSize: '30px' }}>Temperature: {toFahrenheit(weather.main.temp)}°F</p> {/* Convert Celsius to Fahrenheit */}
+          <h3 style={{ fontSize: '30px' }}>Weather</h3>
+          <p style={{ fontSize: '25px' }}><WiCloudy size={30} style={{ marginRight: '10px' }} />{weather.weather[0].main}</p> {/* Add the cloudy icon */}
+          <p style={{ fontSize: '20px' }}>Temperature: {toFahrenheit(weather.main.temp)}°F</p> {/* Convert Celsius to Fahrenheit */}
         </div>
       )}
 
