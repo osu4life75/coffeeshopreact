@@ -1,20 +1,27 @@
 import React from 'react';
 import Menu from './Menu';
-import Merchandise from './Merchandise';
+// import Merchandise from './Merchandise';
 import { GiCoffeeCup } from 'react-icons/gi'; // Import the coffee cup icon
 
 export default function Body(props) {
   return (
     <div className="container">
+      {/* Menu Section */}
       <Menu 
+        title={'Menu'} 
         updateShoppingCart={props.updateShoppingCart} 
         menuItems={props.menuItems} 
         addFavoriteHeart={props.addFavoriteHeart} 
         likedCoffee={props.likedCoffee} 
       />
-      <Merchandise 
+      
+      {/* Merchandise Section */}
+      <Menu 
+        title={'Merchandise'} 
         updateShoppingCart={props.updateShoppingCart} 
-        merchandiseItems={props.merchandiseItems} 
+        menuItems={props.merchandiseItems} 
+        addFavoriteHeart={props.addFavoriteHeart} 
+        likedCoffee={props.likedCoffee} 
       />
 
       {/* Display recommended coffee */}

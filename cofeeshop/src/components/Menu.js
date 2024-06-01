@@ -6,15 +6,19 @@ function Menu(props) {
   return (
     <div className="menu">
       <div className="row">
-        <h3 className="col-12 p-1">Menu</h3>
+        <h3 className="col-12 p-1">{props.title}</h3>
       </div>
       
       <div className={'row container pb-2'} style={{margin: '0 auto'}}>
         {props.menuItems.map(item => (
-          <MenuItem updateShoppingCart={(e) => {
-            
-            props.updateShoppingCart(e)
-          } } key={item.id} item={item} isLiked={props.likedCoffee.includes(item.id)} addFavoriteHeart={(e) => props.addFavoriteHeart(e)} likedCoffee={props.likedCoffee}/>
+          <MenuItem 
+            updateShoppingCart={(e) => props.updateShoppingCart(e)} 
+            key={item.id} 
+            item={item} 
+            isLiked={props.likedCoffee.includes(item.id)} 
+            addFavoriteHeart={(e) => props.addFavoriteHeart(e)} 
+            likedCoffee={props.likedCoffee}
+          />
         ))}
       </div>
     </div>

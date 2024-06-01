@@ -4,7 +4,7 @@ export default function ContactCard() {
   return (
     <div className="row">
       <div className="col-12 col-md-4">
-        <img src="https://github.com/osu4life75/coffeShopImages/blob/main/images.jpeg?raw=true" className="manager" alt="Manager" />
+        <img src="https://github.com/osu4life75/coffeShopImages/blob/main/Manager%20Photo.jpeg?raw=true" className="manager" alt="Manager" />
       </div>
       <div className="col-12 col-md-4">
         <div className="card-body">
