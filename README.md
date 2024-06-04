@@ -42,3 +42,6 @@
   - discount system
   - Stripe for payments
   - Typescript :disappointed:
+
+  # Deployment
+  [![Netlify Status](https://api.netlify.com/api/v1/badges/ba395711-5fe1-4964-8306-8156c15ab77a/deploy-status)](https://app.netlify.com/sites/silver-melomakarona-0f3505/deploys)
