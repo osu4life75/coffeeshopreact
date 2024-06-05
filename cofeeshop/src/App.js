@@ -17,6 +17,8 @@ function App() {
   useEffect(() => {
     getData();
     setLikedCoffee([1,2,5,6]);
+    fetchWeather();
+    
     
     
    
