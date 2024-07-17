@@ -52,10 +52,10 @@
   width: 25px;
 }
 
-.cardimg{
+/* .cardimg{
   height: 375px;
   width: 100%;
-}
+} */
 
 row{
   margin: 20px;
@@ -78,4 +78,64 @@ row{
 .manager{
   width: 375px;
   height: 384px;
+}
+
+/* Card and Image Styling for Coffee and Merchandise*/
+
+/* Ensure the container is responsive */
+.image-container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto; /* Optional: Center the container */
+}
+
+/* Responsive image styling */
+.cardimg {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  display: block; /* Ensures the image doesn't have any inline-block gaps */
+} 
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+/* Basic card styling */
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  margin: 12px;
+}
+
+/* Card image styling */
+.cardimg {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  display: block;
+  object-fit: fill;
+}
+
+/* Card body styling */
+.card-body {
+  padding: 16px;
+}
+
+/* Hover effect */
+.card:hover {
+  transform: scale(1.05);
 }
